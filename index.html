@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <script class="u-script" type="text/javascript" src="Formulas.js" defer=""></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Calculadora lineas de transmisión</title>
+</head>
+<body>
+    <header class="header">
+        <h1>
+            Calculadora de líneas de transmisión
+            <br>
+            Bazaldua Monroy Laura 
+        </h1>
+        <section class="header__img">
+            <img src="https://sociedadtecnologiaydeontologia.files.wordpress.com/2019/01/logotipo_ipn.png" alt="">
+            <img src="https://www.upiita.ipn.mx/images/upiita-logo.png" alt="">
+        </section>
+    </header>
+
+    <section class="CableCoax">
+        <h3> Cable coaxial</h3>
+        <div>
+            <div>
+                <img class="CableCoax__img" src="http://www.geocities.ws/redeslan2003/coaxial.gif" alt="">
+            </div>
+            
+            <label for="CBradioCond1">Radio del conductor &ascr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="CBradioCond1" name="CBradioCond1"><br>
+            <label for="CBradioCond2">Radio del conductor &cscr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="CBradioCond2" name="CBradioCond2"><br>
+            <label for="CBradioDiele">Radio del Dieléctrico &bscr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="CBradioDiele" name="CBradioDiele"><br>
+            <label for="CBConductividadC">Conductividad del conductor &sigma;<sub>c</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="CBConductividadC" name="CBConductividadC"><br>
+            <label for="CBConductividadD">Conductividad del dielectrico &sigma;<sub>d</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="CBConductividadD" name="CBConductividadD"><br>
+            <label for="CBPermitividad">Permitividad relativa &epsilon;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="CBPermitividad" name="CBPermitividad"><br>
+            <label for="CBPermeabilidad">Permeabilidad relativa &mu;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="CBPermeabilidad" name="CBPermeabilidad"><br>
+            <label for="CBFrecuencia">Frecuencia [Hz]</label>
+            <input type="text" size="30" maxlength="30" id="CBFrecuencia" name="CBFrecuencia"><br>
+
+            <button name="calcularImpedanciaCBAJ" onclick="impedanciaCB()">Calcular</button>
+            <br>
+
+            <label>Impedancia &integers;<sub>0</sub></label>
+            <textarea class="ResultadoCBclase" id="ResultadoC"></textarea>
+
+            <b><p>ALTAS FRECUENCIAS. Obtener impedancia con datos fisicos:</p></b>
+            <br>
+            <label for="CAradioCond1">Radio del conductor &ascr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="CAradioCond1" name="CAradioCond1"><br>
+            <label for="CAradioDiele">Radio del dieléctrico &bscr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="CAradioDiele"  name="CAradioDiele"><br>
+            <label for="CAConductividadC">Conductividad del conductor  &sigma;<sub>c</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="CAConductividadC" name="CAConductividadC"><br>
+            <label for="CAConductividadD">Conductividad del dielectrico &sigma;<sub>d</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="CAConductividadD" name="CAConductividadD"><br>
+            <label for="CAPermitividad">Permitividad relativa &epsilon;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="CAPermitividad" name="CAPermitividad"><br>
+            <label for="CAPermeabilidad">Permeabilidad relativa &mu;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="CAPermeabilidad" name="CAPermeabilidad"><br>
+            <label for="CAProfundidad">Profundidad de penetración &lscr;</label>
+            <input type="text" size="30" maxlength="30" id="CAProfundidad" name="CAProfundidad"><br>
+            <label for="CAFrecuencia">Frecuencia [Hz]</label>
+            <input type="text" size="30" maxlength="30" id="CAFrecuencia" name="CAFrecuencia"><br>
+            <button name="calcularImpedanciaCALT" onclick="impedanciaCA()">Calcular</button>
+            <br>
+            <label>Impedancia &integers;<sub>0</sub></label>
+            <textarea class="ResultadoCBclase" id="ResultadoC2"></textarea>
+
+            <u><p>Obtener datos fisicos con impedancia:</p></u>
+            <label for="CradioCond1rec">Radio del conductor &ascr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="CradioCond1rec" name="CradioCond1rec"><br>
+            <label for="CPermitividadrec">Permitividad relativa &epsilon;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="CPermitividadrec" name="CPermitividadrec"><br>
+            <label for="CCapacitanciarec">Ingrese la Capacitancia de la línea &Scy;  </label>
+            <input type="text" size="30" maxlength="30" id="CCapacitanciarec" name="CCapacitanciarec"><br>
+            <label for="CRestrec">Ingrese la Resistencia de la línea R  </label>
+            <input type="text" size="30" maxlength="30" id="CRestrec" name="CRestrec"><br>
+            <label for="CConductividadCrec">Conductividad del conductor  &sigma;<sub>c</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="CConductividadCrec"  name="CConductividadCrec"><br>
+
+            <button name="calcularFisicosCoaxial" onclick="radiosCD()">Calcular</button>
+            <br>
+            <label for="CBradioCond2">Radio del conductor &cscr; [m]</label>
+            <textarea class="ResultadoC1clase" id="ResultadoCradC"></textarea>
+            <br>
+            <label for="CBradioDiele">Radio del Dieléctrico &bscr; [m]</label>
+            <textarea class="ResultadoC2clase" id="ResultadoCradD"></textarea>
+        </div>
+        
+    </section>
+
+    </section>
+        <h3>Microcinta</h3>
+        <br>
+        <p>Obtener impedancia con datos fisicos:</p>
+        <br>
+        <img src="descarga.jpg" alt="">
+        <br>
+        <label for="Mweight">Ingrese el ancho de la cinta &wscr; [m]</label>
+        <input type="text" size="30" maxlength="30" id="Mweight" name="Mweight"><br>
+        <label for="MDist">Ingrese el largo de la cinta &dscr; [m]</label>
+        <input type="text" size="30" maxlength="30" id="MDist" name="MDist"><br>
+        <label for="Mpermitividad">Permitividad efectiva &epsilon;<sub>e</sub></label>
+        <input type="text" size="30" maxlength="30" id="Mpermitividad" name="Mpermitividad"><br>
+
+        <button name="calcularImpedanciaM" onclick="impedanciaM()">Calcular</button><br>
+
+        <label>Impedancia &integers;<sub>0</sub></label>
+        <textarea class="ResultadoMclase" id="ResultadoM"></textarea>
+        
+        <br><br>
+        <u><p>Obtener datos fisicos con impedancia:</p></u>
+        <label for="MImpedancia">Ingrese la impedancia caracteristica de la Microcinta &zopf;<sub>0</sub></label> 
+        <input type="text" size="30" maxlength="30" id="MImpedancia" name="MImpedancia"><br>
+        <label for="MPermitividadrec">Permitividad &epsilon;</label> 
+        <input type="text" size="30" maxlength="30" id="MPermitividadrec" name="MPermitividadrec"><br>
+
+        <label for="Dimensiones">Seleccione la relación entre dimensiones</label><br>
+            <select className="form-select me-4 mt-1" aria-label="Default select example" onChange={valorRatio} id="comboBox">
+            <option selected value="0" id="op0">W/d > 2</option>
+            <option value="1" id="op1">W/d < 2</option>
+            </select>
+            <br>
+        <button name="calcularFisicosM" onclick="medidaCinta()">Calcular</button><br>
+
+        <label>Dimensiones</label>
+        <textarea class="ResultadoMrec" id="ResultadoMrec"></textarea>
+   
+    <section>
+
+    <section>
+        <h3>Linea Bifilar</h3>
+        <b><p>BAJAS FRECUENCIAS. Obtener impedancia con datos fisicos:</p></b>
+            <br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/LigneBifilaire.png" alt=""> 
+            <br>
+            <label for="BBRadioA">Radio del cable &ascr; [m]</label>
+            <input type="text" size="30" maxlength="30" id ="BBRadioA" name="BBRadioA"><br>
+            <label for="BBDistB">Distancia entre cables &dscr; [m]</label>
+            <input type="text" size="30" maxlength="30"  id ="BBDistB" name="BBDistB"><br>
+            <label for="BBConductividad1">Conductividad del cable &sigma;<sub>c</sub> [S/m] </label>
+            <input type="text" size="30" maxlength="30" id="BBConductividad1" name="BBConductividad1"><br>
+            <label for="BBConductividad2">Conductividad del diélectrico &sigma;<sub>d</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30"  id="BBConductividad2" name="BBConductividad2"><br>
+            <label for="BBPermitividad">Permitividad relativa &epsilon;<sub>r</sub> </label>
+            <input type="text" size="30" maxlength="30" id="BBPermitividad" name="BBPermitividad"><br>
+            <label for="BBPermeabilidad">Permeabilidad relativa &mu;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="BBPermeabilidad" name="BBPermeabilidad"><br>
+            <label for="BBFrecuencia">Frecuencia [Hz]</label>
+            <input type="text" size="30" maxlength="30" id="BBFrecuencia" name="BBFrecuencia"><br>
+
+            <button name="calcularImpedanciaBALT" onclick="impedanciaBB()">Calcular</button>
+            <br>
+            <label>Impedancia &integers;<sub>0</sub></label>
+            <textarea class="ResultadoBBclase" id="ResultadoB"></textarea>
+
+            <b><p>ALTAS FRECUENCIAS. Obtener impedancia con datos fisicos:</p></b>
+            <br>
+            <label for="BARadioA">Radio del cable &ascr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="BARadioA" name="BARadioA"><br>
+            <label for="BADistB">Distancia entre cables &dscr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="BADistB" name="BADistB"><br>
+            <label for="BAConductividad1">Conductividad del cable &sigma;<sub>c</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="BAConductividad1" name="BAConductividad1"><br>
+            <label for="BAConductividad2">Conductividad del dieléctrico &sigma;<sub>d</sub> [S/m]</label>
+            <input type="text" size="30" maxlength="30" id="BAConductividad2"  name="BAConductividad2"><br>
+            <label for="BAPermitividad">Permitividad relativa &epsilon;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="BAPermitividad" name="BAPermitividad"><br>
+            <label for="BAPermeabilidad">Permeabilidad relativa &mu;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="BAPermeabilidad" name="BAPermeabilidad"><br>
+            <label for="BAProfundidad">Profundidad de penetración &lscr;</label>
+            <input type="text" size="30" maxlength="30" id="BAProfundidad" name="BAProfundidad"><br>
+            <label for="BAFrecuencia">Frecuencia [Hz]</label>
+            <input type="text" size="30" maxlength="30" id="BAFrecuencia" name="BAFrecuencia"></p><br>
+
+            <button name="calcularImpedanciaBBAJ" onclick="impedanciaBA()">Calcular</button>
+            <br>
+            <label>Impedancia &integers;<sub>0</sub></label>
+            <textarea class="ResultadoBBclase" id="ResultadoB2"></textarea>
+
+            <u><p>Obtener datos fisicos con impedancia:</p></u>
+            <label for="BRadioArec">Radio del cable &ascr; [m]</label>
+            <input type="text" size="30" maxlength="30" id="BRadioArec" name="BRadioArec"><br>
+            <label for="BPermitividadrec">Permitividad relativa &epsilon;<sub>r</sub></label>
+            <input type="text" size="30" maxlength="30" id="BPermitividadrec" name="BPermitividadrec"><br>
+            <label for="BCapacitancia">Ingrese la capacitancia de la línea &Scy;  </label>
+            <input type="text" size="30" maxlength="30" id="BCapacitancia" name="BCapacitancia"><br>
+
+           <button name="calcularFisicosM" onclick="distanciaCables()">Calcular</button>
+            <br>
+           <label>Distancia entre cables &dscr; [m]</label>
+            <textarea class="ResultadoBrec" id="ResultadoBrec"></textarea>
+    </section>
+
+    
+    <footer class="footer">
+        <div>
+            <p> Lineas de transmision y antenas
+            </p>
+        </div>
+    </footer>
+
+    <script src="./math.js"></script>
+    <script src="./Formulas.js"></script>
+    
+</body>
+
+</html>
